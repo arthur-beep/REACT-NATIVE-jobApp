@@ -1,18 +1,17 @@
 import { View, Text, StyleSheet, Dimensions, TouchableOpacity } from 'react-native'
-import React from 'react'
+import React ,{useState} from 'react'
 import Onboarding from 'react-native-onboarding-swiper';
 import Lottie from 'lottie-react-native';
 import { Stack, useRouter } from "expo-router";
-import { setItem } from '../utils/asyncStorage';
+import { useNavigation } from '@react-navigation/native';
 
 const {width, height} = Dimensions.get('window');
 
 export default function OnboardingScreen() {
-    const router = useRouter();
+    const navigation = useNavigation();
 
     const handleDone = ()=> {
-        navigation.navigate('Home');
-        setItem('onboarded', '1');
+        navigation.navigate('home');
     }
 
     const doneButton = ({...props})=>{
@@ -24,8 +23,7 @@ export default function OnboardingScreen() {
         
     }
   return (
-    <View style={styles.container}>
-      <Onboarding
+    <View style={styles.container}><Onboarding
             onDone={handleDone}
             onSkip={handleDone}
             // bottomBarHighlight={false}
@@ -36,7 +34,7 @@ export default function OnboardingScreen() {
                     backgroundColor: '#a7f3d0',
                     image: (
                         <View style={styles.lottie}>
-                            <Lottie source={require('../assets/animations/boost.json')} autoPlay loop />
+                            <Lottie source={require("../../assets/animations/boost.json")} autoPlay loop />
                         </View>
                     ),
                     title: 'Boost Productivity',
@@ -46,7 +44,7 @@ export default function OnboardingScreen() {
                     backgroundColor: '#fef3c7',
                     image: (
                         <View style={styles.lottie}>
-                            <Lottie source={require('../assets/animations/work.json')} autoPlay loop />
+                            <Lottie source={require('../../assets/animations/work.json')} autoPlay loop />
                         </View>
                     ),
                     title: 'Work Seamlessly',
@@ -56,7 +54,7 @@ export default function OnboardingScreen() {
                     backgroundColor: '#a78bfa',
                     image: (
                         <View style={styles.lottie}>
-                            <Lottie source={require('../assets/animations/achieve.json')} autoPlay loop />
+                            <Lottie source={require('../../assets/animations/achieve.json')} autoPlay loop />
                         </View>
                     ),
                     title: 'Achieve Higher Goals',

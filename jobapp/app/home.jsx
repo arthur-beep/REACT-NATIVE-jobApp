@@ -9,6 +9,7 @@ import {
   Welcome,
   
 } from "../components";
+import OnboardingScreen from "../components/onboarding/onboarding";
 
 
 const Home = () => {
@@ -52,6 +53,7 @@ const Home = () => {
           <Nearbyjobs />
         </View>
       </ScrollView>
+      <OnboardingScreen/>
     </SafeAreaView>
   );
 };

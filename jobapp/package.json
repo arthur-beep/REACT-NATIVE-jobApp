@@ -9,13 +9,15 @@
     "web": "expo start --web"
   },
   "dependencies": {
+    "@react-native-async-storage/async-storage": "^1.19.4",
     "axios": "^1.5.1",
     "expo": "~49.0.15",
     "expo-constants": "~14.4.2",
     "expo-font": "~11.4.0",
     "expo-linking": "~5.0.2",
-    "expo-router": "^2.0.0",
+    "expo-router": "^2.0.10",
     "expo-status-bar": "~1.6.0",
+    "lottie-react-native": "^6.4.0",
     "react": "18.2.0",
     "react-native": "0.72.6",
     "react-native-app-intro-slider": "^4.0.4",
